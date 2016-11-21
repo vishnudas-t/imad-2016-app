@@ -1,7 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
+var bodyParser = require("body-parser");
 
 
 var app = express();
@@ -15,10 +15,11 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.use(morgan.urlencoded({ extended: false }));
-app.use(morgan.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 app.get('/',function(req,res){
- res.sendfile("index.html");
+  res.sendfile("index.html");
 });
 app.post('/login',function(req,res){
   var user_name=req.body.user;
@@ -26,7 +27,6 @@ app.post('/login',function(req,res){
   console.log("User name = "+user_name+", password is "+password);
   res.end("yes");
 });
-
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
