@@ -1,9 +1,8 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
-var bodyParser     =        require("body-parser");
-var app            =        express();
+var bodyParser = require("body-parser");
+var app  = express();
 
 var app = express();
 app.use(morgan('combined'));
@@ -22,7 +21,7 @@ app.get('/ui/style.css', function (req, res) {
 //  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });*/
 
-app.post('/registration',function(req,res){
+app.post('/login',function(req,res){
   var user_name=req.body.user;
   var password=req.body.password;
   console.log("User name = "+email+", password is "+password);
