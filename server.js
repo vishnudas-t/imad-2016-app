@@ -2,6 +2,9 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
+var bodyParser     =        require("body-parser");
+var app            =        express();
+
 var app = express();
 app.use(morgan('combined'));
 
