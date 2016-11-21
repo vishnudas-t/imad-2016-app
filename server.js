@@ -17,7 +17,12 @@ app.get('/ui/style.css', function (req, res) {
 //  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });*/
 
-
+app.post('/login',function(req,res){
+  var user_name=req.body.user;
+  var password=req.body.password;
+  console.log("User name = "+email+", password is "+password);
+  res.end("yes");
+});
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
   console.log(`IMAD course app listening on port ${port}!`);
