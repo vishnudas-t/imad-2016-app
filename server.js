@@ -1,7 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var bodyParser = require("body-parser");
+
 
 
 var app = express();
@@ -15,8 +15,8 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(morgan.urlencoded({ extended: false }));
+app.use(morgan.json());
 app.get('/',function(req,res){
  res.sendfile("index.html");
 });
