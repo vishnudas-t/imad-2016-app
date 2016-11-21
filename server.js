@@ -17,7 +17,7 @@ app.get('/ui/style.css', function (req, res) {
 //  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });*/
 
-app.post('/login',function(req,res){
+app.post('/registration',function(req,res){
   var user_name=req.body.user;
   var password=req.body.password;
   console.log("User name = "+email+", password is "+password);
