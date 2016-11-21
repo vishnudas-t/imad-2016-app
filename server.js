@@ -24,7 +24,7 @@ app.get('/ui/style.css', function (req, res) {
 app.post('/login',function(req,res){
   var user_name=req.body.user;
   var password=req.body.password;
-  console.log("User name = "+email+", password is "+password);
+  console.log("User name = "+user_name+", password is "+password);
   res.end("yes");
 });
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
